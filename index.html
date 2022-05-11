@@ -1,11 +1,19 @@
 <html>
     <head>
-        <title>Running a Python script</title>
-        <?PHP
-        echo shell_exec("python script.py");
-        ?>
-        </head>
-    <body>
-        <!-- BODY -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.9/brython.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.9/brython_stdlib.min.js"></script>
+    </head>
+    <body onload="brython()">
+        <button id='test-button'>눌러봐요</button>
+
     </body>
 </html>
+<script type="text/python">
+    from browser import document
+
+    def alert(event):
+        print("오잉??")
+    
+    document["test-button"].bind("click", alert)
+
+</script>
